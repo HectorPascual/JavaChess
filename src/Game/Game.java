@@ -9,17 +9,23 @@ public class Game {
     private Board board;
 
 
-    public Game(){
-        if (Math.random() > 0.5) {      //  Assigns a random color to each player (between black and white)
-            player1 = new Player("black");
-            player2 = new Player("white");
-        } else {
-            player1 = new Player("white");
-            player2 = new Player("black");
-        }
+    public Game(Boolean randPlayer) {
         board = new Board();
-    }
+        if (randPlayer) {
+            if (Math.random() > 0.5) {      //  Assigns a random color to each player (between black and white)
+                player1 = new Player("black", board);
+                player2 = new Player("white", board);
+            } else {
+                player1 = new Player("white", board);
+                player2 = new Player("black", board);
+            }
 
+        }
+        else{
+            player1 = new Player("black", board);
+            player2 = new Player("white", board);
+        }
+    }
 
     public void fillBoard(){ // fills the board with each player pieces
         for(int i = 0; i<Board.sideSize;i++){   //filling pawns
@@ -30,5 +36,13 @@ public class Game {
 
     public Board getBoard() {
         return board;
+    }
+
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
     }
 }

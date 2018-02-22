@@ -10,7 +10,7 @@ public class Board{
         board = new Piece[8][8];    // initializes the board as a Matrix of 8x8
     }
 
-    public Piece[][] getBoard() {   // returns the board Pieces Matrixx
+    public  Piece[][] getBoard() {   // returns the board Pieces Matrix
         return board;
     }
 }

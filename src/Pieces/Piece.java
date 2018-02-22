@@ -7,7 +7,8 @@ import Game.Player;
  */
 public abstract class Piece {
 
-    private Player player;
+    protected Player player;
+    protected int x,y;
     protected String name;
 
     public Piece(Player player){
@@ -18,5 +19,7 @@ public abstract class Piece {
     public String toString(){
         return name;
     }
+
+    public abstract void move(int x,int y, int x2, int y2);
 
 }
